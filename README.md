@@ -2,12 +2,7 @@
 
 This project presents a robust, scalable MySQL database solution designed from scratch for a fictional e-commerce platform named "ShipShop." It includes complete database schema design, SQL logic automation, performance optimization, analytics-ready views, and backup strategies.
 
-
-## 📁 Project Structure
-
-
 ---
-
 
 ## 🧱 Database Design
 
@@ -82,7 +77,7 @@ Using `EXPLAIN ANALYZE`, query cost was reduced from 1607 to 186 rows scanned �
 
 ## 🧪 Data
 
-All data used in the project is provided in CSV format under `/data_raw/`. These files represent:
+All data used in the project is provided in CSV format under `/data-files/`. These files represent:
 
 - Order item transactions and refunds across multiple years
 - Website sessions and pageviews
@@ -98,11 +93,11 @@ All data used in the project is provided in CSV format under `/data_raw/`. These
 ### 🧠 Logical Backup
 
 - Performed using `mysqldump`
-- File: `shipshop_logical_backup.sql` located in `/data_backup/logical/`
+- File: `shipshop_logical_backup.sql` located in `/backup-files/logical/`
 
 ### 🗃️ Physical Backup
 
-- Table-wise CSV exports stored in `/data_backup/physical/`
+- Table-wise CSV exports stored in `/backup-files/physical/`
 - Ensures compatibility with both restoration and data ingestion pipelines
 
 ### 📷 Backup Files Screenshot
