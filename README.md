@@ -98,11 +98,11 @@ All data used in the project is provided in CSV format under `/data/`. These fil
 ### 🧠 Logical Backup
 
 - Performed using `mysqldump`
-- File: `shipshop_logical_backup.sql` located in `/backup-files/logical/`
+- File: `shipshop_logical_backup.sql` located in `/backup/logical/`
 
 ### 🗃️ Physical Backup
 
-- Table-wise CSV exports stored in `/backup-files/physical/`
+- Table-wise CSV exports stored in `/backup/physical/`
 - Ensures compatibility with both restoration and data ingestion pipelines
 
 ### 📷 Backup Files Screenshot
