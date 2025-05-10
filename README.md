@@ -1,4 +1,4 @@
-# 🛒 ShipShop  - E-Commerce Database Project
+# 🛒 ShipShop - E-Commerce Database Project
 
 This project presents a robust, scalable MySQL database solution designed from scratch for a fictional e-commerce platform named "ShipShop." It includes complete database schema design, SQL logic automation, performance optimization, analytics-ready views, and backup strategies.
 
@@ -22,6 +22,7 @@ The schema models real-world business entities and includes the following tables
 All relationships are enforced using foreign key constraints to ensure referential integrity and consistency.
 
 ### 📷 ER Diagram
+
 ![ER Diagram](images/er_diagram_shipshop.png) <!-- Replace with actual image path -->
 
 ---
@@ -52,6 +53,7 @@ Three core views were developed to support marketing and sales analytics:
 - `monthly_website_sessions`: Similar to above, focused on website sessions
 
 ### 📷 Sample View Output
+
 ![monthly_orders view result](images/view_monthly_orders_output.png)
 ![monthly_sessions view result](images/view_monthly_sessions_output.png)
 
@@ -61,30 +63,33 @@ Three core views were developed to support marketing and sales analytics:
 
 Strategic indexing was applied to reduce query cost and improve scan efficiency:
 
-| Table          | Indexed Column       |
-|----------------|----------------------|
-| order_items    | product_id           |
-| order_items    | created_at           |
-| website_sessions | created_at         |
-| website_pageviews | created_at        |
+| Table             | Indexed Column |
+| ----------------- | -------------- |
+| order_items       | product_id     |
+| order_items       | created_at     |
+| website_sessions  | created_at     |
+| website_pageviews | created_at     |
 
 Using `EXPLAIN ANALYZE`, query cost was reduced from 1607 to 186 rows scanned — achieving significant speedup.
 
 ### 📷 Before & After Optimization
-![Query Optimization Benchmark](images/query_indexing_benchmark.png)
+
+![Query Optimization Output (before indexing)](images/query_indexing_before_indexing.png)
+![Query Optimization Output (after indexing)](images/query_indexing_after_indexing.png)
 
 ---
 
 ## 🧪 Data
 
-All data used in the project is provided in CSV format under `/data-files/`. These files represent:
+All data used in the project is provided in CSV format under `/data/`. These files represent:
 
 - Order item transactions and refunds across multiple years
 - Website sessions and pageviews
 - Marketing campaign attribution data
 
 ### 📷 Sample Data Files
-![Raw CSV Data Files](images/raw_csv_directory.png)
+
+![Raw CSV Data Files](images/raw_csv_order_items.png)
 
 ---
 
@@ -101,7 +106,8 @@ All data used in the project is provided in CSV format under `/data-files/`. The
 - Ensures compatibility with both restoration and data ingestion pipelines
 
 ### 📷 Backup Files Screenshot
-![Backup Files](images/backup_files_view.png)
+
+![Backup Files](images/logical_backup_view.png)
 
 ---
 
@@ -119,6 +125,7 @@ All data used in the project is provided in CSV format under `/data-files/`. The
 All schema scripts are available in sequence: `01-shipshop.sql` to `09-shipshop.sql` under the `/schema/` directory.
 
 ### 📷 Schema File List
+
 ![SQL File Structure](images/sql_schema_file_list.png)
 
 ---
@@ -146,4 +153,5 @@ mysql -u root -p shipshop < schema/02-shipshop.sql
 ...
 
 # Or load logical backup directly
-mysql -u root -p shipshop < data_backup/logical/shipshop_logical_backup.sql
+mysql -u root -p shipshop < backup/logical/shipshop_logical_backup.sql
+```
